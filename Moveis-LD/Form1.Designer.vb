@@ -22,10 +22,38 @@ Partial Class Form1
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.txt_login = New System.Windows.Forms.TextBox()
+        Me.txt_senha = New System.Windows.Forms.TextBox()
+        Me.SuspendLayout()
+        '
+        'txt_login
+        '
+        Me.txt_login.Location = New System.Drawing.Point(153, 79)
+        Me.txt_login.Name = "txt_login"
+        Me.txt_login.Size = New System.Drawing.Size(100, 20)
+        Me.txt_login.TabIndex = 0
+        '
+        'txt_senha
+        '
+        Me.txt_senha.Location = New System.Drawing.Point(153, 148)
+        Me.txt_senha.Name = "txt_senha"
+        Me.txt_senha.Size = New System.Drawing.Size(100, 20)
+        Me.txt_senha.TabIndex = 1
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txt_senha)
+        Me.Controls.Add(Me.txt_login)
+        Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
+    Friend WithEvents txt_login As TextBox
+    Friend WithEvents txt_senha As TextBox
 End Class
