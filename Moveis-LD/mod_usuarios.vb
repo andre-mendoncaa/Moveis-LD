@@ -222,8 +222,8 @@ Module mod_usuarios
     'subs para limpar campos
     Sub limpar_campos_login()
         With frm_login
-            .txt_cpf.Clear()
-            .txt_senha.Clear()
+            .txt_cpf.Text = String.Empty
+            .txt_senha.Text = String.Empty
         End With
     End Sub
 
