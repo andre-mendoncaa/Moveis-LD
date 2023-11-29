@@ -30,6 +30,9 @@ Partial Class frm_cadastro_funcionarios
         Me.lbl_novocpf = New System.Windows.Forms.Label()
         Me.btn_excluir = New System.Windows.Forms.Button()
         Me.btn_atualizar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txt_cpf
@@ -95,11 +98,41 @@ Partial Class frm_cadastro_funcionarios
         Me.btn_atualizar.Text = "Atualizar"
         Me.btn_atualizar.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(547, 332)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(8, 8)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(135, 296)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Cadastrar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(135, 339)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 10
+        Me.Button3.Text = "Voltar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'frm_cadastro_funcionarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_atualizar)
         Me.Controls.Add(Me.btn_excluir)
         Me.Controls.Add(Me.lbl_novocpf)
@@ -123,4 +156,7 @@ Partial Class frm_cadastro_funcionarios
     Friend WithEvents lbl_novocpf As Label
     Friend WithEvents btn_excluir As Button
     Friend WithEvents btn_atualizar As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class
