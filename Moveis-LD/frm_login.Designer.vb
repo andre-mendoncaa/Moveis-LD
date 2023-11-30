@@ -23,76 +23,23 @@ Partial Class frm_login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_login))
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.lbl_cpf = New Guna.UI.WinForms.GunaLabel()
-        Me.lbl_senha = New Guna.UI.WinForms.GunaLabel()
-        Me.txt_cpf = New ns1.BunifuMaterialTextbox()
-        Me.txt_senha = New ns1.BunifuMaterialTextbox()
         Me.btn_logar = New Guna.UI.WinForms.GunaButton()
+        Me.lbl_cpf = New ns1.BunifuCustomLabel()
+        Me.lbl_senha = New ns1.BunifuCustomLabel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txt_cpf = New ns1.BunifuMetroTextbox()
+        Me.txt_senha = New ns1.BunifuMetroTextbox()
+        Me.btn_minimizar = New ns1.BunifuFlatButton()
+        Me.btn_fechar = New ns1.BunifuFlatButton()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuElipse1
         '
         Me.BunifuElipse1.ElipseRadius = 15
         Me.BunifuElipse1.TargetControl = Me
-        '
-        'lbl_cpf
-        '
-        Me.lbl_cpf.AutoSize = True
-        Me.lbl_cpf.Font = New System.Drawing.Font("Bahnschrift Condensed", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_cpf.Location = New System.Drawing.Point(137, 186)
-        Me.lbl_cpf.Name = "lbl_cpf"
-        Me.lbl_cpf.Size = New System.Drawing.Size(56, 39)
-        Me.lbl_cpf.TabIndex = 1
-        Me.lbl_cpf.Text = "CPF"
-        '
-        'lbl_senha
-        '
-        Me.lbl_senha.AutoSize = True
-        Me.lbl_senha.Font = New System.Drawing.Font("Bahnschrift Condensed", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_senha.Location = New System.Drawing.Point(137, 257)
-        Me.lbl_senha.Name = "lbl_senha"
-        Me.lbl_senha.Size = New System.Drawing.Size(85, 39)
-        Me.lbl_senha.TabIndex = 2
-        Me.lbl_senha.Text = "SENHA"
-        '
-        'txt_cpf
-        '
-        Me.txt_cpf.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_cpf.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.txt_cpf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txt_cpf.HintForeColor = System.Drawing.Color.Empty
-        Me.txt_cpf.HintText = ""
-        Me.txt_cpf.isPassword = False
-        Me.txt_cpf.LineFocusedColor = System.Drawing.Color.Blue
-        Me.txt_cpf.LineIdleColor = System.Drawing.Color.Gray
-        Me.txt_cpf.LineMouseHoverColor = System.Drawing.Color.Blue
-        Me.txt_cpf.LineThickness = 3
-        Me.txt_cpf.Location = New System.Drawing.Point(240, 186)
-        Me.txt_cpf.Margin = New System.Windows.Forms.Padding(4)
-        Me.txt_cpf.Name = "txt_cpf"
-        Me.txt_cpf.Size = New System.Drawing.Size(370, 39)
-        Me.txt_cpf.TabIndex = 6
-        Me.txt_cpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'txt_senha
-        '
-        Me.txt_senha.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_senha.Font = New System.Drawing.Font("Century Gothic", 9.75!)
-        Me.txt_senha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txt_senha.HintForeColor = System.Drawing.Color.Empty
-        Me.txt_senha.HintText = ""
-        Me.txt_senha.isPassword = False
-        Me.txt_senha.LineFocusedColor = System.Drawing.Color.Blue
-        Me.txt_senha.LineIdleColor = System.Drawing.Color.Gray
-        Me.txt_senha.LineMouseHoverColor = System.Drawing.Color.Blue
-        Me.txt_senha.LineThickness = 3
-        Me.txt_senha.Location = New System.Drawing.Point(240, 257)
-        Me.txt_senha.Margin = New System.Windows.Forms.Padding(4)
-        Me.txt_senha.Name = "txt_senha"
-        Me.txt_senha.Size = New System.Drawing.Size(370, 39)
-        Me.txt_senha.TabIndex = 8
-        Me.txt_senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'btn_logar
         '
@@ -102,43 +49,181 @@ Partial Class frm_login
         Me.btn_logar.BorderColor = System.Drawing.Color.Black
         Me.btn_logar.DialogResult = System.Windows.Forms.DialogResult.None
         Me.btn_logar.FocusedColor = System.Drawing.Color.Empty
-        Me.btn_logar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.btn_logar.Font = New System.Drawing.Font("Segoe UI Historic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_logar.ForeColor = System.Drawing.Color.White
         Me.btn_logar.Image = Nothing
         Me.btn_logar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btn_logar.Location = New System.Drawing.Point(377, 342)
+        Me.btn_logar.Location = New System.Drawing.Point(331, 352)
         Me.btn_logar.Name = "btn_logar"
         Me.btn_logar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btn_logar.OnHoverBorderColor = System.Drawing.Color.Black
         Me.btn_logar.OnHoverForeColor = System.Drawing.Color.White
         Me.btn_logar.OnHoverImage = Nothing
         Me.btn_logar.OnPressedColor = System.Drawing.Color.Black
-        Me.btn_logar.Size = New System.Drawing.Size(60, 42)
+        Me.btn_logar.Size = New System.Drawing.Size(130, 46)
         Me.btn_logar.TabIndex = 9
         Me.btn_logar.Text = "ENTRAR"
+        Me.btn_logar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lbl_cpf
+        '
+        Me.lbl_cpf.AutoSize = True
+        Me.lbl_cpf.Font = New System.Drawing.Font("Microsoft Tai Le", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_cpf.Location = New System.Drawing.Point(131, 209)
+        Me.lbl_cpf.Name = "lbl_cpf"
+        Me.lbl_cpf.Size = New System.Drawing.Size(65, 37)
+        Me.lbl_cpf.TabIndex = 10
+        Me.lbl_cpf.Text = "CPF"
+        '
+        'lbl_senha
+        '
+        Me.lbl_senha.AutoSize = True
+        Me.lbl_senha.Font = New System.Drawing.Font("Microsoft Tai Le", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_senha.Location = New System.Drawing.Point(131, 263)
+        Me.lbl_senha.Name = "lbl_senha"
+        Me.lbl_senha.Size = New System.Drawing.Size(94, 37)
+        Me.lbl_senha.TabIndex = 11
+        Me.lbl_senha.Text = "Senha"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(331, 40)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(130, 138)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
+        'txt_cpf
+        '
+        Me.txt_cpf.BorderColorFocused = System.Drawing.Color.Blue
+        Me.txt_cpf.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txt_cpf.BorderColorMouseHover = System.Drawing.Color.Blue
+        Me.txt_cpf.BorderThickness = 3
+        Me.txt_cpf.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_cpf.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.txt_cpf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txt_cpf.isPassword = False
+        Me.txt_cpf.Location = New System.Drawing.Point(227, 209)
+        Me.txt_cpf.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_cpf.Name = "txt_cpf"
+        Me.txt_cpf.Size = New System.Drawing.Size(370, 37)
+        Me.txt_cpf.TabIndex = 15
+        Me.txt_cpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'txt_senha
+        '
+        Me.txt_senha.BorderColorFocused = System.Drawing.Color.Blue
+        Me.txt_senha.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txt_senha.BorderColorMouseHover = System.Drawing.Color.Blue
+        Me.txt_senha.BorderThickness = 3
+        Me.txt_senha.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_senha.Font = New System.Drawing.Font("Century Gothic", 9.75!)
+        Me.txt_senha.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txt_senha.isPassword = False
+        Me.txt_senha.Location = New System.Drawing.Point(227, 263)
+        Me.txt_senha.Margin = New System.Windows.Forms.Padding(4)
+        Me.txt_senha.Name = "txt_senha"
+        Me.txt_senha.Size = New System.Drawing.Size(370, 37)
+        Me.txt_senha.TabIndex = 16
+        Me.txt_senha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btn_minimizar
+        '
+        Me.btn_minimizar.Activecolor = System.Drawing.Color.Empty
+        Me.btn_minimizar.BackgroundImage = CType(resources.GetObject("btn_minimizar.BackgroundImage"), System.Drawing.Image)
+        Me.btn_minimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_minimizar.BorderRadius = 0
+        Me.btn_minimizar.ButtonText = ""
+        Me.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_minimizar.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_minimizar.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_minimizar.Iconimage = Nothing
+        Me.btn_minimizar.Iconimage_right = Nothing
+        Me.btn_minimizar.Iconimage_right_Selected = Nothing
+        Me.btn_minimizar.Iconimage_Selected = Nothing
+        Me.btn_minimizar.IconMarginLeft = 0
+        Me.btn_minimizar.IconMarginRight = 0
+        Me.btn_minimizar.IconRightVisible = True
+        Me.btn_minimizar.IconRightZoom = 0R
+        Me.btn_minimizar.IconVisible = True
+        Me.btn_minimizar.IconZoom = 90.0R
+        Me.btn_minimizar.IsTab = False
+        Me.btn_minimizar.Location = New System.Drawing.Point(673, 12)
+        Me.btn_minimizar.Name = "btn_minimizar"
+        Me.btn_minimizar.Normalcolor = System.Drawing.Color.Empty
+        Me.btn_minimizar.OnHovercolor = System.Drawing.Color.Empty
+        Me.btn_minimizar.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_minimizar.selected = False
+        Me.btn_minimizar.Size = New System.Drawing.Size(36, 38)
+        Me.btn_minimizar.TabIndex = 19
+        Me.btn_minimizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_minimizar.Textcolor = System.Drawing.Color.White
+        Me.btn_minimizar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'btn_fechar
+        '
+        Me.btn_fechar.Activecolor = System.Drawing.Color.Empty
+        Me.btn_fechar.BackgroundImage = CType(resources.GetObject("btn_fechar.BackgroundImage"), System.Drawing.Image)
+        Me.btn_fechar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_fechar.BorderRadius = 0
+        Me.btn_fechar.ButtonText = ""
+        Me.btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_fechar.DisabledColor = System.Drawing.Color.Gray
+        Me.btn_fechar.Iconcolor = System.Drawing.Color.Transparent
+        Me.btn_fechar.Iconimage = Nothing
+        Me.btn_fechar.Iconimage_right = Nothing
+        Me.btn_fechar.Iconimage_right_Selected = Nothing
+        Me.btn_fechar.Iconimage_Selected = Nothing
+        Me.btn_fechar.IconMarginLeft = 0
+        Me.btn_fechar.IconMarginRight = 0
+        Me.btn_fechar.IconRightVisible = True
+        Me.btn_fechar.IconRightZoom = 0R
+        Me.btn_fechar.IconVisible = True
+        Me.btn_fechar.IconZoom = 90.0R
+        Me.btn_fechar.IsTab = False
+        Me.btn_fechar.Location = New System.Drawing.Point(736, 12)
+        Me.btn_fechar.Name = "btn_fechar"
+        Me.btn_fechar.Normalcolor = System.Drawing.Color.Empty
+        Me.btn_fechar.OnHovercolor = System.Drawing.Color.Empty
+        Me.btn_fechar.OnHoverTextColor = System.Drawing.Color.White
+        Me.btn_fechar.selected = False
+        Me.btn_fechar.Size = New System.Drawing.Size(42, 38)
+        Me.btn_fechar.TabIndex = 20
+        Me.btn_fechar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_fechar.Textcolor = System.Drawing.Color.White
+        Me.btn_fechar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btn_logar)
+        Me.Controls.Add(Me.btn_fechar)
+        Me.Controls.Add(Me.btn_minimizar)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.txt_cpf)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbl_senha)
         Me.Controls.Add(Me.lbl_cpf)
+        Me.Controls.Add(Me.btn_logar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_login"
         Me.Text = "Login"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
-    Friend WithEvents txt_cpf As ns1.BunifuMaterialTextbox
-    Friend WithEvents lbl_senha As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents lbl_cpf As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents txt_senha As ns1.BunifuMaterialTextbox
     Friend WithEvents btn_logar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents lbl_senha As ns1.BunifuCustomLabel
+    Friend WithEvents lbl_cpf As ns1.BunifuCustomLabel
+    Friend WithEvents txt_senha As ns1.BunifuMetroTextbox
+    Friend WithEvents txt_cpf As ns1.BunifuMetroTextbox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btn_minimizar As ns1.BunifuFlatButton
+    Friend WithEvents btn_fechar As ns1.BunifuFlatButton
 End Class
