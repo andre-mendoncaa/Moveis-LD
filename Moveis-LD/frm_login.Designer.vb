@@ -24,8 +24,8 @@ Partial Class frm_login
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_login))
-        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.btn_logar = New Guna.UI.WinForms.GunaButton()
+        'Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        'Me.btn_logar = New Guna.UI.WinForms.GunaButton()
         Me.lbl_cpf = New ns1.BunifuCustomLabel()
         Me.lbl_senha = New ns1.BunifuCustomLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -38,32 +38,32 @@ Partial Class frm_login
         '
         'BunifuElipse1
         '
-        Me.BunifuElipse1.ElipseRadius = 15
-        Me.BunifuElipse1.TargetControl = Me
-        '
-        'btn_logar
-        '
-        Me.btn_logar.AnimationHoverSpeed = 0.07!
-        Me.btn_logar.AnimationSpeed = 0.03!
-        Me.btn_logar.BaseColor = System.Drawing.Color.Red
-        Me.btn_logar.BorderColor = System.Drawing.Color.Black
-        Me.btn_logar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btn_logar.FocusedColor = System.Drawing.Color.Empty
-        Me.btn_logar.Font = New System.Drawing.Font("Segoe UI Historic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_logar.ForeColor = System.Drawing.Color.White
-        Me.btn_logar.Image = Nothing
-        Me.btn_logar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btn_logar.Location = New System.Drawing.Point(331, 352)
-        Me.btn_logar.Name = "btn_logar"
-        Me.btn_logar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btn_logar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btn_logar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btn_logar.OnHoverImage = Nothing
-        Me.btn_logar.OnPressedColor = System.Drawing.Color.Black
-        Me.btn_logar.Size = New System.Drawing.Size(130, 46)
-        Me.btn_logar.TabIndex = 9
-        Me.btn_logar.Text = "ENTRAR"
-        Me.btn_logar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        'Me.BunifuElipse1.ElipseRadius = 15
+        'Me.BunifuElipse1.TargetControl = Me
+        ''
+        ''btn_logar
+        ''
+        'Me.btn_logar.AnimationHoverSpeed = 0.07!
+        'Me.btn_logar.AnimationSpeed = 0.03!
+        'Me.btn_logar.BaseColor = System.Drawing.Color.Red
+        'Me.btn_logar.BorderColor = System.Drawing.Color.Black
+        'Me.btn_logar.DialogResult = System.Windows.Forms.DialogResult.None
+        'Me.btn_logar.FocusedColor = System.Drawing.Color.Empty
+        'Me.btn_logar.Font = New System.Drawing.Font("Segoe UI Historic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        'Me.btn_logar.ForeColor = System.Drawing.Color.White
+        'Me.btn_logar.Image = Nothing
+        'Me.btn_logar.ImageSize = New System.Drawing.Size(20, 20)
+        'Me.btn_logar.Location = New System.Drawing.Point(331, 352)
+        'Me.btn_logar.Name = "btn_logar"
+        'Me.btn_logar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        'Me.btn_logar.OnHoverBorderColor = System.Drawing.Color.Black
+        'Me.btn_logar.OnHoverForeColor = System.Drawing.Color.White
+        'Me.btn_logar.OnHoverImage = Nothing
+        'Me.btn_logar.OnPressedColor = System.Drawing.Color.Black
+        'Me.btn_logar.Size = New System.Drawing.Size(130, 46)
+        'Me.btn_logar.TabIndex = 9
+        'Me.btn_logar.Text = "ENTRAR"
+        'Me.btn_logar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbl_cpf
         '
@@ -207,7 +207,7 @@ Partial Class frm_login
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lbl_senha)
         Me.Controls.Add(Me.lbl_cpf)
-        Me.Controls.Add(Me.btn_logar)
+        'Me.Controls.Add(Me.btn_logar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_login"
         Me.Text = "Login"
@@ -217,8 +217,8 @@ Partial Class frm_login
 
     End Sub
 
-    Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
-    Friend WithEvents btn_logar As Guna.UI.WinForms.GunaButton
+    'Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
+    'Friend WithEvents btn_logar As Guna.UI.WinForms.GunaButton
     Friend WithEvents lbl_senha As ns1.BunifuCustomLabel
     Friend WithEvents lbl_cpf As ns1.BunifuCustomLabel
     Friend WithEvents txt_senha As ns1.BunifuMetroTextbox

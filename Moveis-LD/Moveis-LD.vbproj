@@ -61,7 +61,7 @@
       <HintPath>..\..\..\..\Downloads\Bunifu_UI_WinForms_5.0.3\ui.winforms.5.0.3\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\..\Downloads\FRAMEWORK VB.NET\Bunifu_UI_v1.52.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Downloads\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
@@ -132,6 +132,7 @@
     <Compile Include="frm_menu_gerente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mod_agenda.vb" />
     <Compile Include="mod_usuarios.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
