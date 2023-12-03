@@ -82,4 +82,56 @@ Module mod_agenda
             End Try
         End Using
     End Sub
+
+    Sub nova_tarefa(ficha_cod, func, data, tipo, realizado)
+        Using connection As New SQLiteConnection(conString)
+            connection.Open()
+            Using transaction As SQLiteTransaction = connection.BeginTransaction()
+                Try
+                    If connection.State = ConnectionState.Open Then
+                        Dim commandText As String = "INSERT INTO tb_agenda(ficha_cod, funcionario, data, tipo, realizado) VALUES (@ficha_cod, @func, @data, @tipo, @realizado)"
+                        Using command As New SQLiteCommand(commandText, connection)
+                            command.Parameters.AddWithValue("@ficha_cod", ficha_cod)
+                            command.Parameters.AddWithValue("@func", func)
+                            command.Parameters.AddWithValue("@data", data)
+                            command.Parameters.AddWithValue("@tipo", tipo)
+                            command.Parameters.AddWithValue("@realizado", realizado)
+                            command.ExecuteNonQuery()
+                        End Using
+                        MsgBox("Tarefa adicionada com sucesso!")
+                    End If
+                    transaction.Commit()
+                Catch ex As Exception
+                    transaction.Rollback()
+                    MsgBox("Erro: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
+    Sub nova_ficha(nome, endereco, contato, objeto, total)
+        Using connection As New SQLiteConnection(conString)
+            connection.Open()
+            Using transaction As SQLiteTransaction = connection.BeginTransaction()
+                Try
+                    If connection.State = ConnectionState.Open Then
+                        Dim commandText As String = "INSERT INTO tb_fichas(nome, endereco, contato, objeto, total) VALUES (@nome, @endereco, @contato, @objeto, @total)"
+                        Using command As New SQLiteCommand(commandText, connection)
+                            command.Parameters.AddWithValue("@nome", nome)
+                            command.Parameters.AddWithValue("@endereco", endereco)
+                            command.Parameters.AddWithValue("@contato", contato)
+                            command.Parameters.AddWithValue("@objeto", objeto)
+                            command.Parameters.AddWithValue("@total", total)
+                            command.ExecuteNonQuery()
+                        End Using
+                        MsgBox("Ficha adicionada com sucesso!")
+                    End If
+                    transaction.Commit()
+                Catch ex As Exception
+                    transaction.Rollback()
+                    MsgBox("Erro: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
 End Module

@@ -9,9 +9,14 @@
     End Sub
 
     Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
-        Me.Close()
+        Me.Hide()
         frm_login.Show()
         cpfLogado = Nothing
         funcionarioLogado = Nothing
+    End Sub
+
+    Private Sub btn_nova_tarefa_Click(sender As Object, e As EventArgs) Handles btn_nova_tarefa.Click
+        Me.Hide()
+        frm_adicionar_tarefa.Show()
     End Sub
 End Class
