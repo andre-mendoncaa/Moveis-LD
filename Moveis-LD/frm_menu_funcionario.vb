@@ -33,6 +33,8 @@ Public Class frm_menu_funcionario
     Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
         Me.Close()
         frm_login.Show()
+        cpfLogado = Nothing
+        funcionarioLogado = Nothing
     End Sub
 
     Private Sub AlterarSenhaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlterarSenhaToolStripMenuItem.Click

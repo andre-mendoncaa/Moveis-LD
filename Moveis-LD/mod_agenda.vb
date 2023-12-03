@@ -7,7 +7,7 @@ Module mod_agenda
     Sub preencherGridAfazeres()
         Dim ds As New DataSet
         Dim dt As New DataTable
-        Dim commandText As String = "SELECT cod, data, tipo, endereco FROM tb_agenda WHERE funcionario = @funcionario_logado AND realizado='N'"
+        Dim commandText As String = "SELECT cod, data, tipo FROM tb_agenda WHERE funcionario = @funcionario_logado AND realizado='N'"
         Dim SQLiteAdapter As New SQLiteDataAdapter
         command = New SQLiteCommand(commandText, connection)
         command.Parameters.AddWithValue("@funcionario_logado", funcionarioLogado)
@@ -20,14 +20,27 @@ Module mod_agenda
     Sub preencherGridConcluidos()
         Dim ds As New DataSet
         Dim dt As New DataTable
-        Dim commandText As String = "SELECT cod, data, tipo, endereco FROM tb_agenda WHERE funcionario = @funcionario_logado AND realizado='S'"
+        Dim commandText As String = "SELECT cod, data, tipo FROM tb_agenda WHERE funcionario = @funcionario_logado AND realizado='S'"
         Dim SQLiteAdapter As New SQLiteDataAdapter
         command = New SQLiteCommand(commandText, connection)
         command.Parameters.AddWithValue("@funcionario_logado", funcionarioLogado)
         SQLiteAdapter.SelectCommand = command
         SQLiteAdapter.Fill(dt)
         frm_menu_funcionario.ConcluidosDataGrid.DataSource = dt
-        frm_menu_funcionario.ConcluidosDataGrid.Columns("cod").Visible = False
+        'frm_menu_funcionario.ConcluidosDataGrid.Columns("cod").Visible = False
+    End Sub
+
+    Sub preencherGridConcluidosGerente()
+        Dim ds As New DataSet
+        Dim dt As New DataTable
+        Dim commandText As String = "SELECT tb_agenda.cod, tb_agenda.funcionario, tb_agenda.data, tb_agenda.tipo, tb_fichas.nome, tb_fichas.endereco, tb_fichas.objeto 
+                                    FROM tb_agenda INNER JOIN tb_fichas ON tb_agenda.ficha_cod = tb_fichas.cod"
+        Dim SQLiteAdapter As New SQLiteDataAdapter
+        command = New SQLiteCommand(commandText, connection)
+        SQLiteAdapter.SelectCommand = command
+        SQLiteAdapter.Fill(dt)
+        frm_menu_gerente.ConcluidoDataGrid.DataSource = dt
+        frm_menu_gerente.ConcluidoDataGrid.Columns("cod").Visible = False
     End Sub
 
     Sub marcar_concluido(cod)

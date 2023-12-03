@@ -95,6 +95,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_adicionar_ficha.Designer.vb">
+      <DependentUpon>frm_adicionar_ficha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_adicionar_ficha.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_adicionar_tarefa.Designer.vb">
+      <DependentUpon>frm_adicionar_tarefa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_adicionar_tarefa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_agenda_mais.Designer.vb">
       <DependentUpon>frm_agenda_mais.vb</DependentUpon>
     </Compile>
@@ -133,6 +145,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mod_agenda.vb" />
+    <Compile Include="mod_fichas.vb" />
     <Compile Include="mod_usuarios.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -151,6 +164,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_adicionar_ficha.resx">
+      <DependentUpon>frm_adicionar_ficha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_adicionar_tarefa.resx">
+      <DependentUpon>frm_adicionar_tarefa.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_agenda_mais.resx">
       <DependentUpon>frm_agenda_mais.vb</DependentUpon>
     </EmbeddedResource>

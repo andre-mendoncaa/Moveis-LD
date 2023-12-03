@@ -52,6 +52,7 @@ Module mod_usuarios
             Catch ex As Exception
                 MsgBox("Erro de conexão: " & ex.Message)
             End Try
+            connection.Close()
         End Using
     End Sub
 
@@ -114,6 +115,7 @@ Module mod_usuarios
             Catch ex As Exception
                 MsgBox("Erro: " & ex.Message)
             End Try
+            connection.Close()
         End Using
     End Sub
 
@@ -140,6 +142,7 @@ Module mod_usuarios
             Catch ex As Exception
                 MsgBox("Erro: " & ex.Message)
             End Try
+            connection.Close()
         End Using
     End Sub
 
@@ -182,6 +185,7 @@ Module mod_usuarios
             Catch ex As Exception
                 MsgBox("Erro: " & ex.Message)
             End Try
+            connection.Close()
         End Using
     End Sub
 
@@ -216,6 +220,7 @@ Module mod_usuarios
                 MsgBox("Erro: " & ex.Message)
                 Return False
             End Try
+            connection.Close()
         End Using
     End Function
 
