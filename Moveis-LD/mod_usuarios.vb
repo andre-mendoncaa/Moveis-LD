@@ -4,7 +4,6 @@ Imports System.Runtime.InteropServices
 
 Module mod_usuarios
 
-    'Conexões com o banco de dados
     Public dbCommand As String = ""
     Public bindingSrc As BindingSource
     Public dbName As String = "db_moveis.db"
@@ -17,7 +16,9 @@ Module mod_usuarios
     Public funcionarioLogado As String
 
     Sub logar(cpf As String, senha As String)
+
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Using transaction As SQLiteTransaction = connection.BeginTransaction()
                 Try
@@ -31,19 +32,24 @@ Module mod_usuarios
 
                             If reader.HasRows Then
                                 reader.Read()
-                                If reader.GetString(3) = "gerente" Then
-                                    MsgBox("Entrou como gerente.")
-                                    cpfLogado = cpf
-                                    funcionarioLogado = reader.GetString(1)
-                                    frm_menu_gerente.Show()
+                                If reader.GetString(4) = "inativo" Then
+                                    MsgBox("Você não pode entrar no sistema pois sua conta está desativada.")
                                 Else
-                                    MsgBox("Entrou como funcionário.")
-                                    cpfLogado = cpf
-                                    funcionarioLogado = reader.GetString(1)
-                                    frm_menu_funcionario.Show()
+                                    If reader.GetString(3) = "gerente" Then
+                                        MsgBox("Entrou como gerente.")
+                                        cpfLogado = cpf
+                                        funcionarioLogado = reader.GetString(1)
+                                        frm_menu_gerente.Show()
+                                    Else
+                                        MsgBox("Entrou como funcionário.")
+                                        cpfLogado = cpf
+                                        funcionarioLogado = reader.GetString(1)
+                                        frm_menu_funcionario.Show()
+
+                                    End If
+                                    frm_login.Hide()
+                                    limpar_campos_login()
                                 End If
-                                frm_login.Hide()
-                                limpar_campos_login()
                             Else
                                 MsgBox("CPF ou senha inválidos!")
                                 limpar_campos_login()
@@ -53,27 +59,29 @@ Module mod_usuarios
                     transaction.Commit()
                 Catch ex As Exception
                     transaction.Rollback()
-                    MsgBox("Erro: " & ex.Message)
                 End Try
             End Using
         End Using
+        connection.Close()
     End Sub
 
 
 
 
-    Sub cadastrar(cpf As String, nome As String, senha As String, acesso As String)
+    Sub cadastrar(cpf As String, nome As String, senha As String, acesso As String, status As String)
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Using transaction As SQLiteTransaction = connection.BeginTransaction()
                 Try
                     If connection.State = ConnectionState.Open Then
-                        Dim commandText As String = "INSERT INTO tb_usuarios VALUES (@cpf, @nome, @senha, @acesso)"
+                        Dim commandText As String = "INSERT INTO tb_usuarios VALUES (@cpf, @nome, @senha, @acesso, @status)"
                         Using command As New SQLiteCommand(commandText, connection)
                             command.Parameters.AddWithValue("@cpf", cpf)
                             command.Parameters.AddWithValue("@nome", nome)
                             command.Parameters.AddWithValue("@senha", senha)
                             command.Parameters.AddWithValue("@acesso", acesso)
+                            command.Parameters.AddWithValue("@status", status)
                             command.ExecuteNonQuery()
                         End Using
                         MsgBox("Cadastro realizado com sucesso!")
@@ -81,15 +89,16 @@ Module mod_usuarios
                     transaction.Commit()
                 Catch ex As Exception
                     transaction.Rollback()
-                    MsgBox("Erro: " & ex.Message)
                 End Try
             End Using
         End Using
+        connection.Close()
     End Sub
 
 
     Sub procurar_usuario(cpf As String)
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Using transaction As SQLiteTransaction = connection.BeginTransaction()
                 Try
@@ -105,15 +114,12 @@ Module mod_usuarios
                                         .txt_nome.Text = reader.GetString(1)
                                         .txt_senha.Text = reader.GetString(2)
                                         .cmb_acesso.Text = reader.GetString(3)
-                                        .btn_excluir.Enabled = True
+                                        .cmb_status.Text = reader.GetString(4)
                                         .btn_atualizar.Enabled = True
-                                        .lbl_novocpf.Visible = True
-                                        .txt_novocpf.Visible = True
                                     End With
                                 Else
                                     limpar_campos_cadastro()
                                     With frm_cadastro_funcionarios
-                                        .btn_excluir.Enabled = False
                                         .btn_atualizar.Enabled = False
                                     End With
                                 End If
@@ -123,44 +129,45 @@ Module mod_usuarios
                     transaction.Commit()
                 Catch ex As Exception
                     transaction.Rollback()
-                    MsgBox("Erro: " & ex.Message)
                 End Try
             End Using
         End Using
+        connection.Close()
     End Sub
 
 
-    Sub atualizar_cadastro(novoCpf As String, cpf As String, nome As String, senha As String, acesso As String)
+    Sub atualizar_cadastro(cpf As String, nome As String, senha As String, acesso As String, status As String)
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Using transaction As SQLiteTransaction = connection.BeginTransaction()
                 Try
                     If connection.State = ConnectionState.Open Then
-                        Dim commandText As String = "UPDATE tb_usuarios SET cpf=@novoCpf, nome=@nome, senha=@senha, acesso=@acesso WHERE cpf=@cpf"
+                        Dim commandText As String = "UPDATE tb_usuarios SET nome=@nome, senha=@senha, acesso=@acesso, status=@status WHERE cpf=@cpf"
                         Using command As New SQLiteCommand(commandText, connection)
-                            command.Parameters.AddWithValue("@novoCpf", novoCpf)
                             command.Parameters.AddWithValue("@cpf", cpf)
                             command.Parameters.AddWithValue("@nome", nome)
                             command.Parameters.AddWithValue("@senha", senha)
                             command.Parameters.AddWithValue("@acesso", acesso)
+                            command.Parameters.AddWithValue("@status", status)
                             command.ExecuteNonQuery()
                         End Using
                         MsgBox("Cadastro atualizado com sucesso!")
                         limpar_campos_cadastro()
-                        frm_cadastro_funcionarios.txt_novocpf.Visible = False
                     End If
                     transaction.Commit()
                 Catch ex As Exception
                     transaction.Rollback()
-                    MsgBox("Erro: " & ex.Message)
                 End Try
             End Using
         End Using
+        connection.Close()
     End Sub
 
 
     Sub excluir_cadastro(cpf As String)
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Using transaction As SQLiteTransaction = connection.BeginTransaction()
                 Try
@@ -172,20 +179,20 @@ Module mod_usuarios
                         End Using
                         MsgBox("Cadastro excluido com sucesso!")
                         limpar_campos_cadastro()
-                        frm_cadastro_funcionarios.txt_novocpf.Visible = False
                     End If
                     transaction.Commit()
                 Catch ex As Exception
                     transaction.Rollback()
-                    MsgBox("Erro: " & ex.Message)
                 End Try
             End Using
         End Using
+        connection.Close()
     End Sub
 
 
     Sub alterar_senha(novaSenha)
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Using transaction As SQLiteTransaction = connection.BeginTransaction()
                 Try
@@ -200,15 +207,16 @@ Module mod_usuarios
                     transaction.Commit()
                 Catch ex As Exception
                     transaction.Rollback()
-                    MsgBox("Erro: " & ex.Message)
                 End Try
             End Using
         End Using
+        connection.Close()
     End Sub
 
 
     Function checar_senha(senha) As Boolean
         Using connection As New SQLiteConnection(conString)
+            connection.Close()
             connection.Open()
             Try
                 If connection.State = ConnectionState.Open Then
@@ -232,10 +240,8 @@ Module mod_usuarios
                     Return False
                 End If
             Catch ex As SQLiteException
-                MsgBox("Erro de SQLite: " & ex.Message)
                 Return False
             Catch ex As Exception
-                MsgBox("Erro: " & ex.Message)
                 Return False
             End Try
             connection.Close()
@@ -252,10 +258,10 @@ Module mod_usuarios
 
     Sub limpar_campos_cadastro()
         With frm_cadastro_funcionarios
-            .txt_novocpf.Clear()
             .txt_nome.Clear()
             .txt_senha.Clear()
             .cmb_acesso.ResetText()
+            .cmb_status.ResetText()
         End With
     End Sub
 

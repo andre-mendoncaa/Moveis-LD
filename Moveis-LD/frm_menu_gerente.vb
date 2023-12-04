@@ -7,7 +7,7 @@ Public Class frm_menu_gerente
         preencherGridAgenda()
     End Sub
 
-    Private Sub btn_nova_ficha_Click(sender As Object, e As EventArgs) Handles btn_nova_ficha.Click
+    Private Sub btn_nova_ficha_Click(sender As Object, e As EventArgs)
         Me.Close()
         frm_adicionar_ficha.Show()
     End Sub
@@ -19,11 +19,6 @@ Public Class frm_menu_gerente
         funcionarioLogado = Nothing
     End Sub
 
-    Private Sub btn_nova_tarefa_Click(sender As Object, e As EventArgs) Handles btn_nova_tarefa.Click
-        Me.Close()
-        frm_adicionar_tarefa.Show()
-    End Sub
-
     Private Sub FichasDataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles FichasDataGrid.CellDoubleClick
         If e.ColumnIndex = 0 Then
             Dim value As String = FichasDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
@@ -32,19 +27,64 @@ Public Class frm_menu_gerente
         End If
     End Sub
 
-    Private Sub btn_alterar_Click(sender As Object, e As EventArgs) Handles btn_alterar.Click
+
+    Private Sub GerenciarContaeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerenciarContaeToolStripMenuItem.Click
+        Me.Close()
+        frm_cadastro_funcionarios.Show()
+    End Sub
+
+    Private Sub ConcluidoDataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ConcluidoDataGrid.CellDoubleClick
+        If e.ColumnIndex = 1 Then
+            Dim value As String = ConcluidoDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
+            marcar_nao_concluido(value)
+            preencherGridConcluidosGerente()
+            preencherGridAgenda()
+        End If
+    End Sub
+
+    Private Sub AgendaDataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles AgendaDataGrid.CellDoubleClick
+        MsgBox(e.ColumnIndex)
+        If e.ColumnIndex = 1 Then
+            Dim value As String = AgendaDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
+            marcar_concluido(value)
+            preencherGridConcluidosGerente()
+            preencherGridAgenda()
+        ElseIf e.ColumnIndex = 2 Then
+            Dim value As String = AgendaDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Dim alterarTarefa As New frm_alterar_tarefa()
+
+            alterarTarefa.CarregarDados(value)
+            alterarTarefa.Show()
+        End If
+    End Sub
+
+    Private Sub btn_nova_ficha_Click_1(sender As Object, e As EventArgs) Handles btn_nova_ficha.Click
+        Me.Close()
+        frm_adicionar_ficha.Show()
+    End Sub
+
+    Private Sub btn_alterar_Click_1(sender As Object, e As EventArgs) Handles btn_alterar.Click
         Dim cod = lbl_cod.Text
         Dim nome = txt_nome.Text
-        Dim objeto = txt_objeto.Text
-        Dim endereco = txt_endereco.Text
+        Dim objeto = txt_endereco.Text
+        Dim endereco = txt_objeto.Text
         Dim telefone = txt_telefone.Text
         Dim total = txt_total.Text
         alterar_ficha(cod, nome, objeto, endereco, telefone, total)
         preencherGridFichas()
     End Sub
 
-    Private Sub GerenciarContaeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerenciarContaeToolStripMenuItem.Click
+    Private Sub btn_nova_tarefa_Click(sender As Object, e As EventArgs) Handles btn_nova_tarefa.Click
         Me.Close()
-        frm_alterar_senha.Show()
+        frm_adicionar_tarefa.Show()
     End Sub
+
+    Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
+        Me.Close()
+    End Sub
+
 End Class

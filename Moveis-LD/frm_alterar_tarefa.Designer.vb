@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_adicionar_ficha
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class frm_alterar_tarefa
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,117 +20,77 @@ Partial Class frm_adicionar_ficha
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_adicionar_ficha))
-        Me.txt_nome = New System.Windows.Forms.TextBox()
-        Me.txt_endereco = New System.Windows.Forms.TextBox()
-        Me.txt_contato = New System.Windows.Forms.TextBox()
-        Me.txt_objeto = New System.Windows.Forms.TextBox()
-        Me.txt_total = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_alterar_tarefa))
+        Me.txt_realizado = New System.Windows.Forms.TextBox()
+        Me.txt_tipo = New System.Windows.Forms.TextBox()
+        Me.txt_data = New System.Windows.Forms.TextBox()
+        Me.txt_func = New System.Windows.Forms.TextBox()
+        Me.txt_ficha_cod = New System.Windows.Forms.TextBox()
         Me.BunifuCustomLabel2 = New ns1.BunifuCustomLabel()
+        Me.BunifuElipse1 = New ns1.BunifuElipse(Me.components)
+        Me.btn_fechar = New ns1.BunifuFlatButton()
+        Me.btn_minimizar = New ns1.BunifuFlatButton()
         Me.BunifuCustomLabel1 = New ns1.BunifuCustomLabel()
         Me.BunifuCustomLabel3 = New ns1.BunifuCustomLabel()
         Me.BunifuCustomLabel4 = New ns1.BunifuCustomLabel()
         Me.BunifuCustomLabel5 = New ns1.BunifuCustomLabel()
-        Me.BunifuElipse1 = New ns1.BunifuElipse(Me.components)
-        Me.btn_fechar = New ns1.BunifuFlatButton()
-        Me.btn_minimizar = New ns1.BunifuFlatButton()
+        Me.BunifuCustomLabel6 = New ns1.BunifuCustomLabel()
         Me.btn_voltar = New ns1.BunifuThinButton2()
         Me.btn_salvar = New ns1.BunifuThinButton2()
-        Me.BunifuCustomLabel7 = New ns1.BunifuCustomLabel()
         Me.SuspendLayout()
         '
-        'txt_nome
+        'txt_realizado
         '
-        Me.txt_nome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nome.Location = New System.Drawing.Point(188, 98)
-        Me.txt_nome.Name = "txt_nome"
-        Me.txt_nome.Size = New System.Drawing.Size(297, 22)
-        Me.txt_nome.TabIndex = 5
+        Me.txt_realizado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_realizado.Location = New System.Drawing.Point(248, 284)
+        Me.txt_realizado.Name = "txt_realizado"
+        Me.txt_realizado.Size = New System.Drawing.Size(239, 22)
+        Me.txt_realizado.TabIndex = 21
         '
-        'txt_endereco
+        'txt_tipo
         '
-        Me.txt_endereco.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_endereco.Location = New System.Drawing.Point(188, 144)
-        Me.txt_endereco.Name = "txt_endereco"
-        Me.txt_endereco.Size = New System.Drawing.Size(297, 22)
-        Me.txt_endereco.TabIndex = 6
+        Me.txt_tipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_tipo.Location = New System.Drawing.Point(248, 244)
+        Me.txt_tipo.Name = "txt_tipo"
+        Me.txt_tipo.Size = New System.Drawing.Size(239, 22)
+        Me.txt_tipo.TabIndex = 20
         '
-        'txt_contato
+        'txt_data
         '
-        Me.txt_contato.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_contato.Location = New System.Drawing.Point(188, 190)
-        Me.txt_contato.Name = "txt_contato"
-        Me.txt_contato.Size = New System.Drawing.Size(297, 22)
-        Me.txt_contato.TabIndex = 7
+        Me.txt_data.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_data.Location = New System.Drawing.Point(248, 204)
+        Me.txt_data.Name = "txt_data"
+        Me.txt_data.Size = New System.Drawing.Size(239, 22)
+        Me.txt_data.TabIndex = 19
         '
-        'txt_objeto
+        'txt_func
         '
-        Me.txt_objeto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_objeto.Location = New System.Drawing.Point(188, 237)
-        Me.txt_objeto.Name = "txt_objeto"
-        Me.txt_objeto.Size = New System.Drawing.Size(297, 22)
-        Me.txt_objeto.TabIndex = 8
+        Me.txt_func.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_func.Location = New System.Drawing.Point(248, 171)
+        Me.txt_func.Name = "txt_func"
+        Me.txt_func.Size = New System.Drawing.Size(239, 22)
+        Me.txt_func.TabIndex = 18
         '
-        'txt_total
+        'txt_ficha_cod
         '
-        Me.txt_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_total.Location = New System.Drawing.Point(188, 285)
-        Me.txt_total.Name = "txt_total"
-        Me.txt_total.Size = New System.Drawing.Size(297, 22)
-        Me.txt_total.TabIndex = 9
+        Me.txt_ficha_cod.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_ficha_cod.Location = New System.Drawing.Point(248, 134)
+        Me.txt_ficha_cod.Name = "txt_ficha_cod"
+        Me.txt_ficha_cod.Size = New System.Drawing.Size(239, 22)
+        Me.txt_ficha_cod.TabIndex = 17
         '
         'BunifuCustomLabel2
         '
         Me.BunifuCustomLabel2.AutoSize = True
         Me.BunifuCustomLabel2.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel2.Location = New System.Drawing.Point(102, 101)
+        Me.BunifuCustomLabel2.Location = New System.Drawing.Point(127, 134)
         Me.BunifuCustomLabel2.Name = "BunifuCustomLabel2"
-        Me.BunifuCustomLabel2.Size = New System.Drawing.Size(50, 19)
-        Me.BunifuCustomLabel2.TabIndex = 50
-        Me.BunifuCustomLabel2.Text = "Nome"
-        '
-        'BunifuCustomLabel1
-        '
-        Me.BunifuCustomLabel1.AutoSize = True
-        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(99, 147)
-        Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
-        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(71, 19)
-        Me.BunifuCustomLabel1.TabIndex = 51
-        Me.BunifuCustomLabel1.Text = "Endereço"
-        '
-        'BunifuCustomLabel3
-        '
-        Me.BunifuCustomLabel3.AutoSize = True
-        Me.BunifuCustomLabel3.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel3.Location = New System.Drawing.Point(99, 193)
-        Me.BunifuCustomLabel3.Name = "BunifuCustomLabel3"
-        Me.BunifuCustomLabel3.Size = New System.Drawing.Size(62, 19)
-        Me.BunifuCustomLabel3.TabIndex = 52
-        Me.BunifuCustomLabel3.Text = "Contato"
-        '
-        'BunifuCustomLabel4
-        '
-        Me.BunifuCustomLabel4.AutoSize = True
-        Me.BunifuCustomLabel4.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel4.Location = New System.Drawing.Point(102, 237)
-        Me.BunifuCustomLabel4.Name = "BunifuCustomLabel4"
-        Me.BunifuCustomLabel4.Size = New System.Drawing.Size(55, 19)
-        Me.BunifuCustomLabel4.TabIndex = 53
-        Me.BunifuCustomLabel4.Text = "Objeto"
-        '
-        'BunifuCustomLabel5
-        '
-        Me.BunifuCustomLabel5.AutoSize = True
-        Me.BunifuCustomLabel5.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel5.Location = New System.Drawing.Point(99, 285)
-        Me.BunifuCustomLabel5.Name = "BunifuCustomLabel5"
-        Me.BunifuCustomLabel5.Size = New System.Drawing.Size(43, 19)
-        Me.BunifuCustomLabel5.TabIndex = 54
-        Me.BunifuCustomLabel5.Text = "Total"
+        Me.BunifuCustomLabel2.Size = New System.Drawing.Size(115, 19)
+        Me.BunifuCustomLabel2.TabIndex = 48
+        Me.BunifuCustomLabel2.Text = "Código da ficha"
         '
         'BunifuElipse1
         '
@@ -158,14 +118,14 @@ Partial Class frm_adicionar_ficha
         Me.btn_fechar.IconVisible = True
         Me.btn_fechar.IconZoom = 90.0R
         Me.btn_fechar.IsTab = False
-        Me.btn_fechar.Location = New System.Drawing.Point(543, 25)
+        Me.btn_fechar.Location = New System.Drawing.Point(610, 29)
         Me.btn_fechar.Name = "btn_fechar"
         Me.btn_fechar.Normalcolor = System.Drawing.Color.Empty
         Me.btn_fechar.OnHovercolor = System.Drawing.Color.Empty
         Me.btn_fechar.OnHoverTextColor = System.Drawing.Color.White
         Me.btn_fechar.selected = False
         Me.btn_fechar.Size = New System.Drawing.Size(42, 38)
-        Me.btn_fechar.TabIndex = 67
+        Me.btn_fechar.TabIndex = 56
         Me.btn_fechar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_fechar.Textcolor = System.Drawing.Color.White
         Me.btn_fechar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -191,17 +151,68 @@ Partial Class frm_adicionar_ficha
         Me.btn_minimizar.IconVisible = True
         Me.btn_minimizar.IconZoom = 90.0R
         Me.btn_minimizar.IsTab = False
-        Me.btn_minimizar.Location = New System.Drawing.Point(501, 25)
+        Me.btn_minimizar.Location = New System.Drawing.Point(568, 29)
         Me.btn_minimizar.Name = "btn_minimizar"
         Me.btn_minimizar.Normalcolor = System.Drawing.Color.Empty
         Me.btn_minimizar.OnHovercolor = System.Drawing.Color.Empty
         Me.btn_minimizar.OnHoverTextColor = System.Drawing.Color.White
         Me.btn_minimizar.selected = False
         Me.btn_minimizar.Size = New System.Drawing.Size(36, 38)
-        Me.btn_minimizar.TabIndex = 66
+        Me.btn_minimizar.TabIndex = 55
         Me.btn_minimizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_minimizar.Textcolor = System.Drawing.Color.White
         Me.btn_minimizar.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'BunifuCustomLabel1
+        '
+        Me.BunifuCustomLabel1.AutoSize = True
+        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuCustomLabel1.Location = New System.Drawing.Point(127, 168)
+        Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
+        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(86, 19)
+        Me.BunifuCustomLabel1.TabIndex = 57
+        Me.BunifuCustomLabel1.Text = "Funcionário"
+        '
+        'BunifuCustomLabel3
+        '
+        Me.BunifuCustomLabel3.AutoSize = True
+        Me.BunifuCustomLabel3.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuCustomLabel3.Location = New System.Drawing.Point(127, 247)
+        Me.BunifuCustomLabel3.Name = "BunifuCustomLabel3"
+        Me.BunifuCustomLabel3.Size = New System.Drawing.Size(39, 19)
+        Me.BunifuCustomLabel3.TabIndex = 59
+        Me.BunifuCustomLabel3.Text = "Tipo"
+        '
+        'BunifuCustomLabel4
+        '
+        Me.BunifuCustomLabel4.AutoSize = True
+        Me.BunifuCustomLabel4.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuCustomLabel4.Location = New System.Drawing.Point(127, 204)
+        Me.BunifuCustomLabel4.Name = "BunifuCustomLabel4"
+        Me.BunifuCustomLabel4.Size = New System.Drawing.Size(41, 19)
+        Me.BunifuCustomLabel4.TabIndex = 58
+        Me.BunifuCustomLabel4.Text = "Data"
+        '
+        'BunifuCustomLabel5
+        '
+        Me.BunifuCustomLabel5.AutoSize = True
+        Me.BunifuCustomLabel5.Font = New System.Drawing.Font("Microsoft Tai Le", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuCustomLabel5.Location = New System.Drawing.Point(127, 284)
+        Me.BunifuCustomLabel5.Name = "BunifuCustomLabel5"
+        Me.BunifuCustomLabel5.Size = New System.Drawing.Size(75, 19)
+        Me.BunifuCustomLabel5.TabIndex = 60
+        Me.BunifuCustomLabel5.Text = "Realizado"
+        '
+        'BunifuCustomLabel6
+        '
+        Me.BunifuCustomLabel6.AutoSize = True
+        Me.BunifuCustomLabel6.Font = New System.Drawing.Font("Microsoft YaHei", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuCustomLabel6.ForeColor = System.Drawing.Color.OrangeRed
+        Me.BunifuCustomLabel6.Location = New System.Drawing.Point(261, 70)
+        Me.BunifuCustomLabel6.Name = "BunifuCustomLabel6"
+        Me.BunifuCustomLabel6.Size = New System.Drawing.Size(188, 35)
+        Me.BunifuCustomLabel6.TabIndex = 61
+        Me.BunifuCustomLabel6.Text = "Alterar Tarefa"
         '
         'btn_voltar
         '
@@ -221,11 +232,11 @@ Partial Class frm_adicionar_ficha
         Me.btn_voltar.IdleFillColor = System.Drawing.Color.White
         Me.btn_voltar.IdleForecolor = System.Drawing.Color.OrangeRed
         Me.btn_voltar.IdleLineColor = System.Drawing.Color.OrangeRed
-        Me.btn_voltar.Location = New System.Drawing.Point(117, 341)
+        Me.btn_voltar.Location = New System.Drawing.Point(146, 351)
         Me.btn_voltar.Margin = New System.Windows.Forms.Padding(5)
         Me.btn_voltar.Name = "btn_voltar"
         Me.btn_voltar.Size = New System.Drawing.Size(153, 41)
-        Me.btn_voltar.TabIndex = 68
+        Me.btn_voltar.TabIndex = 62
         Me.btn_voltar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_salvar
@@ -246,65 +257,54 @@ Partial Class frm_adicionar_ficha
         Me.btn_salvar.IdleFillColor = System.Drawing.Color.White
         Me.btn_salvar.IdleForecolor = System.Drawing.Color.OrangeRed
         Me.btn_salvar.IdleLineColor = System.Drawing.Color.OrangeRed
-        Me.btn_salvar.Location = New System.Drawing.Point(345, 341)
+        Me.btn_salvar.Location = New System.Drawing.Point(381, 351)
         Me.btn_salvar.Margin = New System.Windows.Forms.Padding(5)
         Me.btn_salvar.Name = "btn_salvar"
         Me.btn_salvar.Size = New System.Drawing.Size(153, 41)
-        Me.btn_salvar.TabIndex = 69
+        Me.btn_salvar.TabIndex = 63
         Me.btn_salvar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'BunifuCustomLabel7
-        '
-        Me.BunifuCustomLabel7.AutoSize = True
-        Me.BunifuCustomLabel7.Font = New System.Drawing.Font("Microsoft YaHei", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuCustomLabel7.ForeColor = System.Drawing.Color.OrangeRed
-        Me.BunifuCustomLabel7.Location = New System.Drawing.Point(214, 37)
-        Me.BunifuCustomLabel7.Name = "BunifuCustomLabel7"
-        Me.BunifuCustomLabel7.Size = New System.Drawing.Size(213, 35)
-        Me.BunifuCustomLabel7.TabIndex = 70
-        Me.BunifuCustomLabel7.Text = "Adicionar Ficha"
-        '
-        'frm_adicionar_ficha
+        'frm_alterar_tarefa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(621, 450)
-        Me.Controls.Add(Me.BunifuCustomLabel7)
+        Me.ClientSize = New System.Drawing.Size(683, 450)
         Me.Controls.Add(Me.btn_salvar)
         Me.Controls.Add(Me.btn_voltar)
+        Me.Controls.Add(Me.BunifuCustomLabel6)
+        Me.Controls.Add(Me.BunifuCustomLabel5)
+        Me.Controls.Add(Me.BunifuCustomLabel3)
+        Me.Controls.Add(Me.BunifuCustomLabel4)
+        Me.Controls.Add(Me.BunifuCustomLabel1)
         Me.Controls.Add(Me.btn_fechar)
         Me.Controls.Add(Me.btn_minimizar)
-        Me.Controls.Add(Me.BunifuCustomLabel5)
-        Me.Controls.Add(Me.BunifuCustomLabel4)
-        Me.Controls.Add(Me.BunifuCustomLabel3)
-        Me.Controls.Add(Me.BunifuCustomLabel1)
         Me.Controls.Add(Me.BunifuCustomLabel2)
-        Me.Controls.Add(Me.txt_total)
-        Me.Controls.Add(Me.txt_objeto)
-        Me.Controls.Add(Me.txt_contato)
-        Me.Controls.Add(Me.txt_endereco)
-        Me.Controls.Add(Me.txt_nome)
+        Me.Controls.Add(Me.txt_realizado)
+        Me.Controls.Add(Me.txt_tipo)
+        Me.Controls.Add(Me.txt_data)
+        Me.Controls.Add(Me.txt_func)
+        Me.Controls.Add(Me.txt_ficha_cod)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frm_adicionar_ficha"
-        Me.Text = "frm_adicionar_ficha"
+        Me.Name = "frm_alterar_tarefa"
+        Me.Text = "frm_alterar_tarefa"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txt_nome As TextBox
-    Friend WithEvents txt_endereco As TextBox
-    Friend WithEvents txt_contato As TextBox
-    Friend WithEvents txt_objeto As TextBox
-    Friend WithEvents txt_total As TextBox
+    Friend WithEvents txt_realizado As TextBox
+    Friend WithEvents txt_tipo As TextBox
+    Friend WithEvents txt_data As TextBox
+    Friend WithEvents txt_func As TextBox
+    Friend WithEvents txt_ficha_cod As TextBox
     Friend WithEvents BunifuCustomLabel2 As ns1.BunifuCustomLabel
-    Friend WithEvents BunifuCustomLabel1 As ns1.BunifuCustomLabel
-    Friend WithEvents BunifuCustomLabel3 As ns1.BunifuCustomLabel
-    Friend WithEvents BunifuCustomLabel4 As ns1.BunifuCustomLabel
-    Friend WithEvents BunifuCustomLabel5 As ns1.BunifuCustomLabel
     Friend WithEvents BunifuElipse1 As ns1.BunifuElipse
     Friend WithEvents btn_fechar As ns1.BunifuFlatButton
     Friend WithEvents btn_minimizar As ns1.BunifuFlatButton
+    Friend WithEvents BunifuCustomLabel5 As ns1.BunifuCustomLabel
+    Friend WithEvents BunifuCustomLabel3 As ns1.BunifuCustomLabel
+    Friend WithEvents BunifuCustomLabel4 As ns1.BunifuCustomLabel
+    Friend WithEvents BunifuCustomLabel1 As ns1.BunifuCustomLabel
+    Friend WithEvents BunifuCustomLabel6 As ns1.BunifuCustomLabel
     Friend WithEvents btn_voltar As ns1.BunifuThinButton2
     Friend WithEvents btn_salvar As ns1.BunifuThinButton2
-    Friend WithEvents BunifuCustomLabel7 As ns1.BunifuCustomLabel
 End Class
