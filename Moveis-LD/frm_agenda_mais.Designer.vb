@@ -23,19 +23,18 @@ Partial Class frm_agenda_mais
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lbl_objeto = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_concluido = New System.Windows.Forms.Button()
         Me.btn_voltar = New System.Windows.Forms.Button()
         Me.lbl_contato = New System.Windows.Forms.Label()
         Me.lbl_nome = New System.Windows.Forms.Label()
         Me.lbl_endereco = New System.Windows.Forms.Label()
         Me.lbl_tipo = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbl_data = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lbl_objeto
@@ -46,24 +45,6 @@ Partial Class frm_agenda_mais
         Me.lbl_objeto.Size = New System.Drawing.Size(29, 13)
         Me.lbl_objeto.TabIndex = 27
         Me.lbl_objeto.Text = "Nulo"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(56, 103)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 13)
-        Me.Label2.TabIndex = 26
-        Me.Label2.Text = "Objeto:"
-        '
-        'btn_concluido
-        '
-        Me.btn_concluido.Location = New System.Drawing.Point(197, 252)
-        Me.btn_concluido.Name = "btn_concluido"
-        Me.btn_concluido.Size = New System.Drawing.Size(183, 23)
-        Me.btn_concluido.TabIndex = 25
-        Me.btn_concluido.Text = "Marcar como CONCLUÍDO"
-        Me.btn_concluido.UseVisualStyleBackColor = True
         '
         'btn_voltar
         '
@@ -110,33 +91,6 @@ Partial Class frm_agenda_mais
         Me.lbl_tipo.TabIndex = 20
         Me.lbl_tipo.Text = "Nulo"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(54, 207)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(47, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Contato:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(54, 170)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 13)
-        Me.Label5.TabIndex = 18
-        Me.Label5.Text = "Nome da cliente:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(54, 136)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(56, 13)
-        Me.Label4.TabIndex = 17
-        Me.Label4.Text = "Endereço:"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -164,6 +118,42 @@ Partial Class frm_agenda_mais
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Data:"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(54, 207)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(47, 13)
+        Me.Label6.TabIndex = 19
+        Me.Label6.Text = "Contato:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(54, 170)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(87, 13)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "Nome da cliente:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(54, 136)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(56, 13)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "Endereço:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(56, 103)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
+        Me.Label2.TabIndex = 26
+        Me.Label2.Text = "Objeto:"
+        '
         'frm_agenda_mais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -171,7 +161,6 @@ Partial Class frm_agenda_mais
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.lbl_objeto)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btn_concluido)
         Me.Controls.Add(Me.btn_voltar)
         Me.Controls.Add(Me.lbl_contato)
         Me.Controls.Add(Me.lbl_nome)
@@ -191,17 +180,16 @@ Partial Class frm_agenda_mais
     End Sub
 
     Friend WithEvents lbl_objeto As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btn_concluido As Button
     Friend WithEvents btn_voltar As Button
     Friend WithEvents lbl_contato As Label
     Friend WithEvents lbl_nome As Label
     Friend WithEvents lbl_endereco As Label
     Friend WithEvents lbl_tipo As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents lbl_data As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label2 As Label
 End Class

@@ -52,7 +52,6 @@ Partial Class frm_menu_gerente
         Me.Concluido = New System.Windows.Forms.TabPage()
         Me.ConcluidoDataGrid = New ns1.BunifuCustomDataGrid()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btn_nova_ficha = New System.Windows.Forms.Button()
         Me.FichasDataGrid = New ns1.BunifuCustomDataGrid()
         Me.MenuStrip1.SuspendLayout()
@@ -255,7 +254,7 @@ Partial Class frm_menu_gerente
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
@@ -264,9 +263,10 @@ Partial Class frm_menu_gerente
         Me.AgendaDataGrid.DoubleBuffered = True
         Me.AgendaDataGrid.EnableHeadersVisualStyles = False
         Me.AgendaDataGrid.HeaderBgColor = System.Drawing.Color.SeaGreen
-        Me.AgendaDataGrid.HeaderForeColor = System.Drawing.Color.SeaGreen
+        Me.AgendaDataGrid.HeaderForeColor = System.Drawing.Color.White
         Me.AgendaDataGrid.Location = New System.Drawing.Point(6, 6)
         Me.AgendaDataGrid.Name = "AgendaDataGrid"
+        Me.AgendaDataGrid.ReadOnly = True
         Me.AgendaDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.AgendaDataGrid.RowHeadersVisible = False
         Me.AgendaDataGrid.Size = New System.Drawing.Size(448, 309)
@@ -293,6 +293,10 @@ Partial Class frm_menu_gerente
         '
         'ConcluidoDataGrid
         '
+        Me.ConcluidoDataGrid.AllowUserToAddRows = False
+        Me.ConcluidoDataGrid.AllowUserToDeleteRows = False
+        Me.ConcluidoDataGrid.AllowUserToResizeColumns = False
+        Me.ConcluidoDataGrid.AllowUserToResizeRows = False
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ConcluidoDataGrid.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.ConcluidoDataGrid.BackgroundColor = System.Drawing.Color.Gainsboro
@@ -313,7 +317,9 @@ Partial Class frm_menu_gerente
         Me.ConcluidoDataGrid.HeaderForeColor = System.Drawing.Color.White
         Me.ConcluidoDataGrid.Location = New System.Drawing.Point(3, 3)
         Me.ConcluidoDataGrid.Name = "ConcluidoDataGrid"
+        Me.ConcluidoDataGrid.ReadOnly = True
         Me.ConcluidoDataGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.ConcluidoDataGrid.RowHeadersVisible = False
         Me.ConcluidoDataGrid.Size = New System.Drawing.Size(454, 379)
         Me.ConcluidoDataGrid.TabIndex = 0
         '
@@ -324,13 +330,6 @@ Partial Class frm_menu_gerente
         Me.PictureBox1.Size = New System.Drawing.Size(142, 136)
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(160, 143)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(154, 20)
-        Me.TextBox1.TabIndex = 4
         '
         'btn_nova_ficha
         '
@@ -383,7 +382,6 @@ Partial Class frm_menu_gerente
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.FichasDataGrid)
         Me.Controls.Add(Me.btn_nova_ficha)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -413,7 +411,6 @@ Partial Class frm_menu_gerente
     Friend WithEvents Agenda As TabPage
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents btn_nova_tarefa As Button
     Friend WithEvents AgendaDataGrid As ns1.BunifuCustomDataGrid
     Friend WithEvents Concluido As TabPage

@@ -45,6 +45,32 @@ Public Class frm_menu_gerente
 
     Private Sub GerenciarContaeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerenciarContaeToolStripMenuItem.Click
         Me.Close()
-        frm_alterar_senha.Show()
+        frm_cadastro_funcionarios.Show()
     End Sub
+
+    Private Sub ConcluidoDataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles ConcluidoDataGrid.CellDoubleClick
+        If e.ColumnIndex = 1 Then
+            Dim value As String = ConcluidoDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
+            marcar_nao_concluido(value)
+            preencherGridConcluidosGerente()
+            preencherGridAgenda()
+        End If
+    End Sub
+
+    Private Sub AgendaDataGrid_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles AgendaDataGrid.CellDoubleClick
+        If e.ColumnIndex = 1 Then
+            Dim value As String = AgendaDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
+            marcar_concluido(value)
+            preencherGridConcluidosGerente()
+            preencherGridAgenda()
+        ElseIf e.ColumnIndex = 2 Then
+            Dim value As String = AgendaDataGrid.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Dim alterarTarefa As New frm_alterar_tarefa()
+
+            alterarTarefa.CarregarDados(value)
+            alterarTarefa.Show()
+        End If
+    End Sub
+
+
 End Class
